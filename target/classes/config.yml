@@ -1,0 +1,283 @@
+########################################################################################################
+##                                                                                                    ##
+##                                                                                                    ##
+##               _____  _                 __    __                       __                           ##
+##             / ____|| |                | |   | |                      | |                           ##
+##            | |  __ | |__    __ _  ___ | |_  | |      ___ __   __ ___ | |      ___                  ##
+##            | | |_ || '_ \  / _` |/ __|| __| | |     / _ \\ \ / // _ \| |     / __|                 ##
+##            | |__| || | | || (_| |\__ \| |_  | |____|  __/ \ V /|  __/| |____ \__ \                 ##
+##            \_____||_| |_| \__,_||___/ \__| |______|\___|  \_/  \___||______||___/                  ##
+##                                                                                                    ##
+##                                                                                                    ##
+########################################################################################################
+# -------------------------------
+# Storage Settings
+# -------------------------------
+storage:
+  # Type of storage to use (yaml or sqlite)
+  type: yaml
+
+  # YAML storage configuration
+  yaml:
+    # Directory for storing player data
+    directory: playerdata
+
+  # SQLite storage configuration
+  sqlite:
+    # Database filename
+    filename: data.db
+
+# -------------------------------
+# Level Settings
+# -------------------------------
+levels:
+  # Base points required per level (overridable in level.yml)
+  base-per-level: 100
+
+  # Maximum achievable level
+  max-level: 1000
+
+  # Particle effect when gaining points
+  gain-particle: WITCH
+  gain-particle-count: 10
+
+# -------------------------------
+# Display Settings
+# -------------------------------
+display:
+  # Action bar configuration
+  actionbar:
+    enabled: true
+    format: "&bLevel: &f{level} &7[&a{progress_bar}&7] &b{current_exp}/{required_exp} XP"
+    progress_length: 20
+    progress_filled: "■"
+    progress_empty: "□"
+
+  # Tab list configuration
+  tablist:
+    enabled: true
+    header: "&b&lLevels\n&7Progress: {progress_bar} &f({current_exp}/{required_exp})"
+    footer: "&7Level: &b{level} &7| Multiplier: &b{multiplier}x"
+    progress_length: 20
+    progress_filled: "■"
+    progress_empty: "□"
+
+
+# -------------------------------
+# Animation Settings
+# -------------------------------
+animations:
+  # Firework effects
+  fireworks:
+    enabled: true
+
+  # Sound effects
+  sound:
+    enabled: true
+    type: ENTITY_PLAYER_LEVELUP
+    volume: 1.0
+    pitch: 1.0
+
+  # Particle effects
+  particles:
+    circle:
+      type: SPELL_WITCH
+      count: 20
+      radius: 1.0
+      y-offset: 0.0
+    up:
+      type: FLAME
+      count: 30
+      radius: 0.5
+      y-offset: 1.0
+
+  # Particle trails
+  trails:
+    enabled: true
+    min-level: 50
+    particle: END_ROD
+    count: 3
+
+
+# -------------------------------
+# World Settings
+# -------------------------------
+worlds:
+  # If whitelist is empty, all worlds are allowed except those in blacklist
+  whitelist: []
+  blacklist: []
+
+# -------------------------------
+# Block Points
+# -------------------------------
+# Points awarded for breaking blocks
+# Make sure is bukkit valid material name and UPPERCASE
+
+blocks:
+  DIAMOND_ORE: 10
+  EMERALD_ORE: 15
+  ANCIENT_DEBRIS: 25
+  GOLD_ORE: 5
+  IRON_ORE: 3
+  COAL_ORE: 2
+  REDSTONE_ORE: 3
+  LAPIS_ORE: 5
+  NETHER_QUARTZ_ORE: 2
+  NETHER_GOLD_ORE: 3
+  DEEPSLATE_DIAMOND_ORE: 12
+  DEEPSLATE_EMERALD_ORE: 17
+  DEEPSLATE_GOLD_ORE: 6
+  DEEPSLATE_IRON_ORE: 4
+  DEEPSLATE_COAL_ORE: 3
+  DEEPSLATE_REDSTONE_ORE: 4
+  DEEPSLATE_LAPIS_ORE: 6
+  WHEAT: 5
+  POTATOES: 6
+# -------------------------------
+# Block Level Requirements
+# -------------------------------
+# Minimum level required to break blocks
+block-levels:
+  DIAMOND_ORE: 10
+  EMERALD_ORE: 15
+  ANCIENT_DEBRIS: 30
+  NETHERITE_BLOCK: 50
+  BEACON: 25
+  DRAGON_EGG: 100
+# -------------------------------
+# World Access Requirements
+# -------------------------------
+# Minimum level required to access worlds
+world-access:
+  world_nether: 10
+  world_the_end: 25
+  resource_world: 5
+
+# -------------------------------
+# Mob Points
+# -------------------------------
+# Points awarded for killing mobs
+mobs:
+  ZOMBIE: 3
+  SKELETON: 3
+  CREEPER: 5
+  SPIDER: 3
+  ENDERMAN: 8
+  WITCH: 10
+  BLAZE: 7
+  GHAST: 8
+  SLIME: 2
+  MAGMA_CUBE: 3
+  PIGLIN: 5
+  HOGLIN: 7
+  WITHER_SKELETON: 10
+  SHULKER: 15
+  WARDEN: 100
+  ENDER_DRAGON: 500
+  WITHER: 250
+  ELDER_GUARDIAN: 100
+
+# -------------------------------
+# Armor Multiplier Settings
+# -------------------------------
+# MAKE SURE TO SET EVERYTHING up Early
+# keep in mind changing armor data or info midway may result in the old armor that the player already got wont get
+# recognized by the plugin
+# but adding new pieces is ok
+
+armor-multipliers:
+  enabled: true
+  max-multiplier: 2.0
+
+  # Particle effects for equipping/unequipping armor
+  particles:
+    enabled: true
+    type: SPELL_MOB
+    count: 15
+    radius: 0.5
+
+  # Custom armor pieces
+  diamond_helmet:
+    material: DIAMOND_HELMET
+    name: "&bDiamond Helmet"
+    lore:
+      - "&7Grants a &b+10% &7essence multiplier when worn."
+    multiplier: 0.1
+    permission: "levels.armor.diamond"
+
+  netherite_helmet:
+    material: NETHERITE_HELMET
+    name: "&cNetherite Helmet"
+    lore:
+      - "&7Grants a &c+15% &7essence multiplier when worn."
+    multiplier: 0.15
+    permission: "levels.armor.netherite"
+
+  special_helmet:
+    material: PLAYER_HEAD
+    name: "&5Special Helmet"
+    lore:
+      - "&7Grants a &5+20% &7essence multiplier when worn."
+    multiplier: 0.2
+    permission: "levels.armor.special"
+    custom-model-data: 1
+    head-texture: "http://textures.minecraft.net/texture/990496de8318d0f5ab4bbd6c27ca735db1f00060d49f1e53ed7c7e82984e9afb"
+    head-owner: ""
+
+
+# -----------------------------
+#        Booster Settings
+# -----------------------------
+# this max-multiplier and max-duration options are to keep in control of the boosters
+# and to make sure to prevent wrong commands gets executed
+boosters:
+  max-multiplier: 5.0
+  max-duration: 86400  # 1 day in seconds
+
+# -----------------------------
+#         Event Settings
+# -----------------------------
+events:
+
+  double_xp:
+    name: "Double XP"
+    multiplier: 2.0
+    duration: 3600  # 1 hour
+
+  triple_xp:
+    name: "Triple XP"
+    multiplier: 3.0
+    duration: 1800  # 30 minutes
+
+  quadruple_xp:
+    name: "Quadruple XP"
+    multiplier: 4.0
+    duration: 900   # 15 minutes
+
+  schedule:
+    enabled: false
+    events:
+
+      weekend_boost:
+        event: double_xp
+        days:
+          - SATURDAY
+          - SUNDAY
+        time: "12:00"
+
+      friday_night:
+        event: triple_xp
+        days:
+          - FRIDAY
+        time: "20:00"
+
+# -----------------------------
+#     WorldGuard Integration
+# -----------------------------
+# this is custom flag area for controlling per region grinding in worldguard plugin
+# changing the flag name ... you must restart the server and remove the old flag allow-deny from the region flags
+# and use your new flag name
+
+worldguard:
+  flag-name: "levels-allowed"
+  default-allowed: true

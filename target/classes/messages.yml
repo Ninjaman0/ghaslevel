@@ -1,0 +1,74 @@
+# LevelsPlugin Messages
+
+prefix: "&8[&bLevels&8] "
+
+levels:
+  current: "&aYou have &e{points} &apoints (Level &e{level}&a)"
+  current-other: "&a{player} has &e{points} &apoints (Level &e{level}&a)"
+  gained: "&a+&e{points} &apoints"
+  lost: "&c-&e{points} &cpoints"
+  max-level: "&cYou have reached the maximum level!"
+  not-enough: "&cYou don't have enough points!"
+  give: "&aGave &e{player} {points} &apoints"
+  take: "&aTook &e{points} &apoints from &e{player}"
+  set: "&aSet &e{player}'s &apoints to &e{points}"
+  bar:
+    enabled: "&aAction bar level display enabled"
+    disabled: "&cAction bar level display disabled"
+    no-permission: "&cYou don't have permission to toggle the level bar"
+
+block:
+  placed: "&aYou have placed &e{points} &apoints"
+  broken: "&aYou have broken &e{points} &apoints"
+  mined: "&aYou have mined &e{points} &apoints"
+  level-required: "&cYou need to be at least level &e{required_level} &cto break this block!"
+
+booster:
+  applied: "&aYour new &e{multiplier}x &alevel booster is active for &e{duration}"
+  already-active: "&cYou already have an active &e{multiplier}x &cbooster! (Expires in &e{time}&c)"
+  expired: "&cYour level booster has expired"
+  invalid-multiplier: "&cBooster multiplier must be greater than 1.0"
+  invalid-duration: "&cBooster duration must be positive"
+
+event:
+  started: "&aEvent &e{name} &ahas started! (&e{multiplier}x&a for &e{duration}&a)"
+  already-running: "&cAn event is already running!"
+  ended: "&cEvent &e{name} &chas ended"
+  invalid: "&cInvalid event ID!"
+  list: "&aAvailable events: &e{events}"
+  none-running: "&cNo events are currently running"
+  status: "&aCurrent event: &e{name} &a(&e{multiplier}x&a) - Time left: &e{time}"
+
+pet:
+  multiplier-set: "&aPet multiplier set to &e{multiplier}x"
+  multiplier-cleared: "&cPet multiplier cleared"
+  invalid-multiplier: "&cInvalid multiplier! Must be a positive number greater than 1.0."
+  active: "&aYour pet is active with a &e{multiplier}x &amultiplier!"
+
+armor:
+  list-header: "&6====[ &eAvailable Armor Pieces &6]===="
+  list-empty: "&cNo armor pieces are available."
+  list-entry: "&7- &e{name} &7(ID: &6{id}&7, Multiplier: &6{multiplier}%&7){permission_text}"
+  invalid-id: "&cInvalid armor ID! Use &e/levels armor list &cto see available pieces."
+  creation-failed: "&cFailed to create the armor piece!"
+  give: "&aSuccessfully given &e{armor} &ato &6{player}&a!"
+  max-multiplier: "&cMaximum armor multiplier reached: &e{multiplier}x"
+  equipped: "&aEquipped &e{name} &a(+{multiplier}% level gain)"
+  unequipped: "&cUnequipped &e{name} &c(-{multiplier}% level gain)"
+  permission-required: "&cYou don't have permission to use this armor piece!"
+  total-multiplier: "&aYour current armor multiplier is &e{multiplier}x"
+
+command:
+  no-permission: "&cYou don't have permission to use this command!"
+  player-only: "&cThis command can only be used by players!"
+  player-not-found: "&cPlayer not found!"
+  invalid-amount: "&cInvalid amount! Must be a positive number."
+  invalid-args: "&cInvalid arguments! Type &e/levels &cfor help."
+  reload: "&aConfiguration reloaded!"
+
+world:
+  disabled: "&cLevels is disabled in this world!"
+  level-required: "&cYou need to be at least level &e{required_level} &cto access world &6{world}&c!"
+
+region:
+  disabled: "&cLevels is disabled in this region!"

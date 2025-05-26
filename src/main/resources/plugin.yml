@@ -1,0 +1,77 @@
+name: GhastLevels
+version: '2.5'
+main: com.ninja.ghast.ghastLevels.LevelsPlugin
+api-version: '1.21'
+authors: [Jarda169 / Ninja0_0]
+description: A custom leveling system
+softdepend: [PlaceholderAPI, WorldGuard]
+
+commands:
+  levels:
+    description: Main command for levels management
+    usage: /levels <subcommand> [args]
+
+permissions:
+  levels.help:
+    description: Allows using the help command
+    default: op
+  levels.get:
+    description: Check level
+    default: op
+  levels.multiplier:
+    description: View your current multiplier breakdown
+    default: true
+  levels.give:
+    description: Give levels to players
+    default: op
+  levels.take:
+    description: Take levels from players
+    default: op
+  levels.set:
+    description: Set player level
+    default: op
+  levels.reload:
+    description: Reload plugin configuration
+    default: op
+  levels.event.start:
+    description: Start level events
+    default: op
+  levels.event.stop:
+    description: Stop level events
+    default: op
+  levels.armor.list:
+    description: Allows listing available armor pieces
+    default: op
+  levels.armor.give:
+    description: Allows giving armor pieces to players
+    default: op
+  levels.armor.use:
+    description: Allows using armor effects
+    default: true
+  levels.pet:
+    description: Allows managing pet multipliers
+    default: op
+  levels.booster:
+    description: Allows managing booster multipliers
+    default: op
+  levels.bar:
+    description: Allows toggling action bar display
+    default: op
+  levels.*:
+    description: Grants access to all LevelsPlugin commands
+    default: op
+    children:
+      levels.help: true
+      levels.get: true
+      levels.give: true
+      levels.take: true
+      levels.set: true
+      levels.reload: true
+      levels.event.start: true
+      levels.event.stop: true
+      levels.armor.list: true
+      levels.armor.give: true
+      levels.armor.use: true
+      levels.pet: true
+      levels.multiplier: true
+      levels.bar: true

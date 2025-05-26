@@ -1,0 +1,44 @@
+# ================================
+#    LevelsPlugin Level Config
+# ================================
+#
+# This file allows server administrators to customize the experience points
+# required for each level. If a level is not specified here, the default
+# calculation using base-per-level from config.yml will be used.
+#
+# Format:
+# level: required_xp
+#
+# Example:
+# 1: 100    # Level 1 requires 100 XP
+# 2: 250    # Level 2 requires 250 XP
+# 3: 500    # Level 3 requires 500 XP
+#
+# You can define specific levels or all levels as needed.
+# Levels not defined will use the formula: level * base-per-level
+
+# Early game progression (slower at start)
+1: 50
+2: 100
+3: 150
+4: 200
+5: 250
+
+# Mid game progression (increases more)
+10: 1200
+15: 2000
+20: 3000
+25: 4500
+30: 6000
+
+# Late game progression (challenging)
+50: 15000
+75: 30000
+100: 50000
+
+# End game progression (very challenging)
+150: 100000
+200: 200000
+250: 350000
+500: 1000000
+1000: 5000000
